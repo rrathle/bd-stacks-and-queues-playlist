@@ -1,11 +1,14 @@
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class Playlist {
+    private Queue<Song> playlist;
 
     /**
      * Constructor.
      */
     public Playlist() {
-
+        this.playlist = new LinkedList<>();
     }
 
     /**
@@ -14,7 +17,10 @@ public class Playlist {
      * @return The next Song in the playlist, or null if the playlist is empty.
      */
     public Song getNextSong() {
-        return null;
+//        if (playlist != null) {
+//            return playlist.remove();
+//        }
+        return playlist.poll();
     }
 
     /**
@@ -22,6 +28,10 @@ public class Playlist {
      * @param song the song to be added to the playlist.
      */
     public void addSong(Song song) {
+        if (song != null) {
+            playlist.add(song);
+        }
+
 
     }
 
